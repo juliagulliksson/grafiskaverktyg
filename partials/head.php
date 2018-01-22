@@ -7,8 +7,16 @@
     <title>Selma Deli</title>
     <link href="https://fonts.googleapis.com/css?family=Dancing+Script" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script src="https://use.fontawesome.com/81bfe91082.js"></script>
     <script src="http://code.jquery.com/jquery-3.2.1.min.js" 
     integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
     crossorigin="anonymous"></script>
 </head>
 <body>
+<header>
+    <div class="hero">
+        <img src="images/selmadelilogo.png" alt="logo">
+    </div>
+    <?php require 'partials/navbar.php'; ?>
+</header>

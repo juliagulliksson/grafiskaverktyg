@@ -1,3 +1,7 @@
+body{
+    background-color: $gray;
+}
+
 header{
     .hero{ 
         height: 300px;
@@ -10,16 +14,36 @@ header{
         ul{
             background-color: $purple;
             display: block;
+            text-align: center;
             li{
                 display: inline-block;
                 border-bottom: none;
+                margin-right: 6em;
                 a{
                     color: $gray;
+                    padding: 5px 10px;
                 }
+            }
+            li:active, li:hover{
+                background-color: $purple;
             }
         }
     }
 }
+
+main{
+    background-color: #FFF;
+    width: 73%;
+    margin: 0 auto;
+    .flex-wrapper{
+        .home-image-wrapper{
+            .home-image{
+                height: 460px;
+            }
+        }
+    }
+}
+
 footer{
     .footer-wrapper{
         li{

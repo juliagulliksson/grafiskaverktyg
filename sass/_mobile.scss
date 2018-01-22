@@ -34,11 +34,10 @@ header{
         }
         ul{
             padding: 0px;
-            background-color: $gray;
+            background-color: rgb(247, 247, 247);
             margin: 0;
             display: none;
            
-         
             li{
                 list-style-type: none;
                 padding: 10px 0px;
@@ -49,15 +48,28 @@ header{
                  text-decoration: none;
                  padding-left: 10px;
                  text-transform: uppercase;
-                 
-                
+                 display: block;
                }
+
+               //make jQuery animation with the hovers?
+
+
+            
+               a:active, a:hover{
+                   color: $green;
+                   font-weight: 700;
+               }
+              
+            }
+            li:active, li:hover{
+                background-color: $gray;
             }
         }
     }
 }
 
-/* Main content */
+/***** Home page *****/
+
 .intro-text{
     margin: 20px 30px;
     text-align: center;
@@ -71,12 +83,23 @@ header{
     text-transform: uppercase;
 }
 
-.open-hours{
+%table-div{
     background-color: $black;
     margin: 0px 30px 20px 30px;
     border: 1px solid $black;
     border-radius: 5px;
     padding: 20px;
+}
+
+%table{
+    table-layout: fixed; 
+    margin: auto;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.open-hours{
+    @extend %table-div;
     h1{
         @extend %heading;
     }
@@ -85,9 +108,7 @@ header{
         text-align: center;
     }
     table{
-        table-layout: fixed; 
-        margin: auto;
-        width: 100%;
+        @extend %table;
         td:last-child{
            text-align: right;
         }
@@ -98,7 +119,53 @@ header{
     }
 }
 
-/* Footer */
+.home-image{
+    display: none;
+}
+
+/**** Menu page ****/
+
+.menu-wrapper{
+    @extend %table-div;
+    margin-top: 15px;
+    .other-courses > div, .main-courses {
+        margin-top: 20px;
+        border-bottom: 1px dashed $gray;
+        padding-bottom: 10px;
+    }
+
+    h1{
+        color: $gray;
+        text-align: center;
+    }
+    table{
+        @extend %table;
+        td:last-child{
+            text-align: right;
+         }
+         td{
+             color: $gray;
+             width: 33%;
+             padding-bottom: .5em;
+         }
+         td:not(.description) {
+           font-weight: 700;
+         }
+         .description{
+             text-align: left; 
+             font-style: italic;
+         }
+         th{
+             color: $gray;
+             text-align: left;
+             text-decoration: underline;
+             text-transform: uppercase;
+             padding-bottom: 10px;
+         }
+    }
+}
+
+/**** Footer *****/
 
 footer{
     background-color: $purple;

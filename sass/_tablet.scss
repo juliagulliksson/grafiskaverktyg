@@ -1,3 +1,44 @@
+
+.flex-wrapper{
+    display: flex;
+    .home-image-wrapper{
+        flex-basis: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .home-image{
+            display: block;
+            height: 400px;
+            overflow: hidden;
+            img{
+                height: 100%;
+            }
+        }
+    }
+    .intro-wrapper{
+        flex-basis: 50%;
+        
+        p{
+            margin-bottom: 26px;
+        }
+    } 
+
+}
+
+.menu-wrapper{
+    .menu-flex-wrapper{
+        display: flex;
+        justify-content: space-between;
+        .main-courses{
+            flex-basis: 40%;
+        }
+        .other-courses{
+            flex-basis: 40%;
+        }
+    }
+}
+
+
 footer{
     .footer-wrapper{
        display: block;

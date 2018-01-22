@@ -1,6 +1,30 @@
 footer{
-    li{
-        display: inline-block;
-        margin-right: 20px;
+    .footer-wrapper{
+       display: block;
+       text-align: center;
+        h2{
+           text-align: left;
+       }
+        li{
+            display: inline-block;
+            margin-right: 20px;
+        }
+        .info{
+            display: inline-block;
+        }
+        .contact{
+            display: inline-block;
+            .fa-facebook-square{
+                margin-right: 0px;
+            }
+            ul{
+                li{
+                    margin-top: -15px;
+                }
+                li:first-child{
+                    margin-top: 0;
+                }
+            }
+        }
     }
 }

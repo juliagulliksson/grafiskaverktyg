@@ -57,7 +57,7 @@ header{
             
                a:active, a:hover{
                    color: $green;
-                   font-weight: 700;
+                   //font-weight: 700;
                }
               
             }
@@ -140,12 +140,9 @@ header{
     }
     table{
         @extend %table;
-        td:last-child{
-            text-align: right;
-         }
          td{
              color: $gray;
-             width: 33%;
+             //width: 33%;
              padding-bottom: .5em;
          }
          td:not(.description) {
@@ -154,6 +151,8 @@ header{
          .description{
              text-align: left; 
              font-style: italic;
+             width: 170%;
+             display: block;
          }
          th{
              color: $gray;
@@ -161,6 +160,10 @@ header{
              text-decoration: underline;
              text-transform: uppercase;
              padding-bottom: 10px;
+         }
+         .align-right{
+             text-align: right;
+             display: block;
          }
     }
 }

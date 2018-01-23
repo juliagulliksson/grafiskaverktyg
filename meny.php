@@ -1,95 +1,50 @@
 <?php require 'partials/head.php'; ?>
+<?php include 'partials/menu_arrays.php'; ?>
 <main>
     <div class="menu-wrapper">
         <h1>Vår meny</h1>
         <div class="menu-flex-wrapper">
-            <div class="main-courses">
-                <table>
-                    <tr>
-                        <th>Huvudrätter</th>
-                    </tr>
-                    <tr>
-                        <td>Selmas fiskgryta *</td>
-                        <td>169-:</td>
-                    </tr>
-                    <tr>
-                        <td class="description">Tomatbaserad med lax, räkor, zucchini, morötter, fänkål och saffran. 
-                            Serveras med aioli, parmesan och surdegsbröd.</td>
-                            <td></td>
-                    </tr>
-                    <tr>
-                        <td>Hemlagade köttbullar *</td>
-                        <td>129-:</td>
-                    </tr>
-                    <tr>
-                        <td class="description">Med gräddsås, lingon och rostad potatis.</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>Vegetarisk lasagne</td>
-                        <td>129-:</td>
-                    </tr>
-                    <tr>
-                        <td class="description">Med parmesan och sallad.</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>Selmas skagen *</td>
-                        <td>155-:</td>
-                    </tr>
-                    <tr>
-                        <td class="description">Skagenröra, rostad surdegstoast och sallad.</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>Chevre chaud</td>
-                        <td>145-:</td>
-                    </tr>
-                    <tr>
-                        <td class="description">Chevre gratinerad på surdegsbröd i ugn, 
-                            med honung och valnötter på salladsbädd.</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>Nisses Tomatsoppa med saffran * **</td>
-                        <td>99-:</td>
-                    </tr>
-                    <tr>
-                        <td class="description">Med surdegsbröd (och parmesan).</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>Västerbottenpaj</td>
-                        <td>99-:</td>
-                    </tr>
-                    <tr>
-                        <td class="description">Med sallad.</td>
-                        <td></td>
-                    </tr>
-                </table>
-            </div>
+            
+            <?php 
+            foreach($main_meals as $title => $array):?>
+                <div class="main-courses">
+                    <div class="meal-wrap">
+                        <table>
+                            <tr>
+                                <th><?= $title; ?></th>
+                            </tr>
+                            <?php foreach($array as $meal):?>
+                                <tr>
+                                    <td><?= $meal['title']; ?></td>
+                                    <td><span class="align-right"><?= $meal['price']; ?></span></td>
+                                </tr>
+                                <tr>
+                                    <td class="description"><?= $meal['description']; ?></td>
+                                </tr>
+                            <?php endforeach;?>
+                        </table>
+                    </div>
+                </div>
+            <?php endforeach; ?>
+                
+
+            
             <div class="other-courses">
+              
                 <div class="small-courses">
                     <table>
                         <tr>
                             <th>Smårätter</th>
                         </tr>
-                        <tr>
-                            <td>Simon special</td>
-                            <td>80-:</td>
-                        </tr>
-                        <tr>
-                            <td class="description">1/2 västerbottenpaj med skagenröra.</td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td>Chark/Ostbricka * </td>
-                            <td>129-:</td>
-                        </tr>
-                        <tr>
-                            <td class="description">Två sorter av vardera samt oliver, marmelad, kex och surdegsbröd.</td>
-                            <td></td>
-                        </tr>
+                       <?php for($i = 0; $i < count($small_meals); $i++): ?>
+                            <tr>
+                                <td><?= $small_meals[$i]['title']; ?> </td>
+                                <td><span class="align-right"><?= $small_meals[$i]['price']; ?></span></td>
+                            </tr>
+                            <tr>
+                                <td class="description"><?= $small_meals[$i]['description']; ?></td>
+                            </tr>
+                        <?php endfor; ?>
                     </table>
                 </div>
 
@@ -98,16 +53,12 @@
                         <tr>
                             <th>För barn</th>
                         </tr>
-                        <tr>
-                            <td>Pannkakor med sylt och grädde</td>
-                            <td>59-:</td>
-                        </tr>
-                    
-                        <tr>
-                            <td>Halv portion köttbullar *</td>
-                            <td>79-:</td>
-                        </tr>
-                        
+                        <?php for($i = 0; $i < count($child_meals); $i++): ?>
+                            <tr>
+                                <td><?= $child_meals[$i]['title']; ?></td>
+                                <td><span class="align-right"><?= $child_meals[$i]['price']; ?></span></td>
+                            </tr>
+                        <?php endfor; ?>
                     </table>
                 </div>
 
@@ -116,29 +67,22 @@
                         <tr>
                             <th>Sött</th>
                         </tr>
+                        <?php for($i = 0; $i < count($desserts); $i++): ?>
                         <tr>
-                            <td>Selmas marängsviss *</td>
-                            <td>69-:</td>
+                            <td><?= $desserts[$i]['title']; ?></td>
+                            <td><span class="align-right"><?= $desserts[$i]['price']; ?></span></td>
                         </tr>
-                    
-                        <tr>
-                            <td>Djurgårdsglass</td>
-                            <td>49-:</td>
-                        </tr>
-                        <tr>
-                            <td class="description">Med maränger, lemon curd och vispgrädde.</td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td>Smulpaj med vaniljsås</td>
-                            <td>39-:</td>
-                        </tr>
+                        <?php if(!empty($desserts[$i]['description'])): ?>
+                            <tr>
+                                <td class="description"><?= $desserts[$i]['description']; ?></td>
+                            </tr>
+                        <?php endif;
+                        endfor;?>
                     </table>
                 </div>
-            </div>
+            </div><!--other-courses-->
         </div><!--menu-flex-wrapper -->
     </div><!--menu-wrapper-->
 </main>
-
 
 <?php require 'partials/footer.php'; ?>

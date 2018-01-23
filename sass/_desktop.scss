@@ -1,5 +1,5 @@
 body{
-    background-color: $gray;
+    background-color: #FFF;
 }
 
 header{
@@ -32,7 +32,7 @@ header{
 }
 
 main{
-    background-color: #FFF;
+    background-color: $gray;
     width: 73%;
     margin: 0 auto;
     .flex-wrapper{
@@ -41,6 +41,12 @@ main{
                 height: 460px;
             }
         }
+    }
+}
+
+.menu-wrapper{
+    .allergy-box{
+        width: 30%;
     }
 }
 

@@ -1,4 +1,44 @@
-body {
+/* Extends */
+
+%heading{
+    color: $gray;  
+    margin-top: 0;
+    font-size: 1em;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+%table-div{
+    background-color: $black;
+    margin: 0px 30px 20px 30px;
+    border: 1px solid $black;
+    border-radius: 5px;
+    padding: 20px;
+}
+
+%table{
+    table-layout: fixed; 
+    margin: auto;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+%event-headings{
+    font-size: 1em;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 0;
+}
+
+%event-contact-image{
+    text-align: center;
+    margin-bottom: 35px;
+    img{
+        height: 100%;
+    }
+}
+
+body{
     font-family: $main_font;
     margin: 0px;
 }
@@ -21,7 +61,6 @@ header{
             height: auto;
         }
     }
-
     nav{
         background-color: $purple;
         border-left: 1px solid $black;
@@ -51,10 +90,6 @@ header{
                  display: block;
                }
 
-               //make jQuery animation with the hovers?
-
-
-            
                a:active, a:hover{
                    color: $green;
                    //font-weight: 700;
@@ -73,29 +108,6 @@ header{
 .intro-text{
     margin: 20px 30px;
     text-align: center;
-}
-
-%heading{
-    color: $gray;  
-    margin-top: 0;
-    font-size: 1em;
-    font-weight: 400;
-    text-transform: uppercase;
-}
-
-%table-div{
-    background-color: $black;
-    margin: 0px 30px 20px 30px;
-    border: 1px solid $black;
-    border-radius: 5px;
-    padding: 20px;
-}
-
-%table{
-    table-layout: fixed; 
-    margin: auto;
-    width: 100%;
-    border-collapse: collapse;
 }
 
 .open-hours{
@@ -128,12 +140,14 @@ header{
 .menu-wrapper{
     @extend %table-div;
     margin-top: 15px;
-    .other-courses > div, .main-courses {
+    .meal-wrap, .small-meal-wrap:not(:last-child) {
         margin-top: 20px;
         border-bottom: 1px dashed $gray;
         padding-bottom: 10px;
     }
-
+    .small-meal-wrap:last-child{
+        margin-top: 20px;
+    }
     h1{
         color: $gray;
         text-align: center;
@@ -142,7 +156,6 @@ header{
         @extend %table;
          td{
              color: $gray;
-             //width: 33%;
              padding-bottom: .5em;
          }
          td:not(.description) {
@@ -165,6 +178,72 @@ header{
              text-align: right;
              display: block;
          }
+    }
+    .menu-flex-wrapper{
+        margin-bottom: 3em;
+    }
+    .allergy-box{
+        background-color: $gray;
+        border-radius: 4px;
+        padding: 20px;
+        text-align: center;
+        width: 70%;
+        margin: 0 auto;
+        p{
+            font-style: italic;
+        }
+    }
+
+}
+
+/*** Events and catering page ***/
+
+.event-flex-wrapper{
+    .event-wrapper{
+        padding: 20px;
+        p{
+            font-size: 0.9em;
+            margin-top: 5px;
+        }
+        h1, h2{
+            @extend %event-headings;
+        }
+        .green-link{
+            color: $green;
+            font-weight: 600;
+        }
+    }
+    .event-image{
+        @extend %event-contact-image;
+        height: 400px;
+    }
+}
+
+/**** Contact page ****/
+
+.contact-flex-wrapper{
+    .contact-wrapper{
+        .contact-info{
+            padding: 30px;
+            h1{
+                @extend %event-headings;
+            }
+            h2{
+                @extend %event-headings;
+                font-weight: 400;
+            }
+            ul{
+                padding: 0;
+                margin: 0;
+                li{
+                    list-style-type: none;
+                }
+            }
+        }
+    }
+    .contact-image{
+        @extend %event-contact-image;
+        height: 450px;
     }
 }
 

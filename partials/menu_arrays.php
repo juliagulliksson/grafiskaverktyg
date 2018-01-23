@@ -40,9 +40,11 @@ $main_meals = array(
             "description" => "Med sallad."
         )
     )
+   
 );
 
-    $small_meals = array(
+$small_meals = array(
+    "Smårätter" => array(
         array(
             "title" => "Simon special",
             "price" => "80-:",
@@ -53,9 +55,8 @@ $main_meals = array(
             "price" => "129-:",
             "description" => "Två sorter av vardera samt oliver, marmelad, kex och surdegsbröd."
         )  
-    );
-
-    $child_meals = array(
+    ),
+    "För barn" => array(
         array(
             "title" => "Pannkakor med sylt och grädde",
             "price" => "59-:"
@@ -64,9 +65,8 @@ $main_meals = array(
             "title" => "Halv portion köttbullar *",
             "price" => "79-:"
         )  
-    );
-
-    $desserts = array(
+    ),
+    "Sött" => array(
         array(
             "title" => "Selmas marängsviss *",
             "price" => "69-:"
@@ -79,8 +79,10 @@ $main_meals = array(
         array(
             "title" => "Smulpaj med vaniljsås",
             "price" => "39-:"
-        ),
-    );
+        )
+    )
+)
+
     
 
 ?>
